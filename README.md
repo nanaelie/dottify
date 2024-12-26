@@ -12,7 +12,7 @@ pip install dottify
 
 Voici un exemple d'utilisation de Dottify :
 
-    from Dottify import Dottify
+    from dottify import Dottify
            
     persons = {
        "Alice": {
