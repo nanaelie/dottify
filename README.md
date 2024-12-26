@@ -1,0 +1,46 @@
+# Dottify
+
+Dottify est une bibliothèque Python simple qui permet de convertir des dictionnaires en objets accessibles par attributs. Au lieu d'utiliser la syntaxe classique dict["key"], vous pouvez accéder aux valeurs d'un dictionnaire en utilisant la notation par points dict.key après avoir appliqué la transformation.
+
+## Installation
+
+Vous pouvez installer Dottify via pip :
+
+pip install dottify
+
+## Utilisation
+
+Voici un exemple d'utilisation de Dottify :
+
+    from Dottify import Dottify
+           
+    persons = {
+       "Alice": {
+           "age": 30,
+           "city": "Paris",
+           "profession": "Engineer"
+       },
+       "Charlie": {
+           "age": 35,
+           "city": "Marseille",
+           "profession": "Doctor"
+       }
+    }
+
+    persons = Dottify(persons)
+
+    print(persons.Alice.age) 
+
+## Fonctionnalités
+
+- Conversion facile de dictionnaires en objets accessibles par attributs.
+- Prise en charge des dictionnaires imbriqués.
+
+## Contribuer
+
+Les contributions sont les bienvenues ! N'hésitez pas à soumettre des demandes de tirage (pull requests) ou à ouvrir des problèmes (issues) sur le dépôt GitHub.
+
+## License
+
+Distribué sous la licence MIT. Voir LICENSE pour plus d'informations.
+
