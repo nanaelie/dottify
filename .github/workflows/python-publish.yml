@@ -12,6 +12,10 @@ on:
   release:
     types: [published]
 
+  push:
+    tags:
+      - "v*.*.*"
+
 permissions:
   id-token: write
   contents: read
