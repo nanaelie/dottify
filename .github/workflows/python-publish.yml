@@ -9,9 +9,8 @@
 name: Publish to PyPI
 
 on:
-  push:
-    tags:
-      - "v*.*.*"
+  release:
+    types: [published]
 
 permissions:
   id-token: write
