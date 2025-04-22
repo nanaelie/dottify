@@ -29,7 +29,10 @@ persons = {
 
 persons = Dottify(persons)
 
-print(persons.Alice.age)      # 35
+print(persons.Alice.age)             # 30
+print(persons.Charlie.city)          # Marseille
+print(persons.Charlie.age)           # 35
+print(persons.Alice.profession)      # Engineer
 ```
 ## Fonctionnalités
 
