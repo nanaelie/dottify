@@ -5,13 +5,13 @@ Dottify est une bibliothèque Python simple qui permet de convertir des dictionn
 ## Installation
 
 Vous pouvez installer Dottify via pip :
-
+```bash
 pip install dottify
-
+```
 ## Utilisation
 
 Voici un exemple d'utilisation de Dottify :
-
+```python
     from dottify import Dottify
            
     persons = {
@@ -29,8 +29,8 @@ Voici un exemple d'utilisation de Dottify :
 
     persons = Dottify(persons)
 
-    print(persons.Alice.age) 
-
+    print(persons.Alice.age)      # 35
+```
 ## Fonctionnalités
 
 - Conversion facile de dictionnaires en objets accessibles par attributs.
@@ -42,5 +42,5 @@ Les contributions sont les bienvenues ! N'hésitez pas à soumettre des demandes
 
 ## License
 
-Distribué sous la licence MIT. Voir LICENSE pour plus d'informations.
+Distribué sous la licence MIT. Voir [LICENSE](LICENSE) pour plus d'informations.
 
