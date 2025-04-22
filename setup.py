@@ -1,8 +1,9 @@
 from setuptools import setup, find_packages
+from dottify.__version__ import __version__
 
 setup(
     name="dottify",
-    version="1.0.1",
+    version=__version__,
     author="nae-dev",
     author_email="elienana92@gmail.com",
     description="Une bibliothèque Python pour accéder aux dictionnaires avec la notation par points.",
