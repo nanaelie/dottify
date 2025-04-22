@@ -12,24 +12,24 @@ pip install dottify
 
 Voici un exemple d'utilisation de Dottify :
 ```python
-    from dottify import Dottify
+from dottify import Dottify
            
-    persons = {
-       "Alice": {
-           "age": 30,
-           "city": "Paris",
-           "profession": "Engineer"
-       },
-       "Charlie": {
-           "age": 35,
-           "city": "Marseille",
-           "profession": "Doctor"
-       }
+persons = {
+    "Alice": {
+        "age": 30,
+        "city": "Paris",
+        "profession": "Engineer"
+    },
+    "Charlie": {
+        "age": 35,
+        "city": "Marseille",
+        "profession": "Doctor"
     }
+}
 
-    persons = Dottify(persons)
+persons = Dottify(persons)
 
-    print(persons.Alice.age)      # 35
+print(persons.Alice.age)      # 35
 ```
 ## Fonctionnalités
 
