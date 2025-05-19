@@ -18,3 +18,11 @@ class Dottify:
             else:
                 res[key] = value
         return res
+
+    def get(self, key, value):
+        for ky, val in self.__dict__.items():
+            if key.lower() == ky.lower():
+                return val
+
+        return value
+
