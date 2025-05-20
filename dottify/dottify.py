@@ -15,14 +15,13 @@ class Dottify(dict):
         return self.to_dict().__repr__()
         
     def __getitem__(self, key):
-        match_ = self._find_key(key)
-        if match_:
-            return self.__dict__[match_]
+        if not self.has_key(key):
+            suggestions = self._suggest_keys(key)
+            if suggestions:
+                raise DottifyKNFError(f"Key '{key}' not found. Did you mean: {', '.join(suggestions)}?")
+            raise DottifyKNFError(f"Key '{key}' not found.")
             
-        suggestions = self._suggest_keys(key)
-        if suggestions:
-            raise DottifyKNFError(f"Key '{key}' not found. Did you mean: {', '.join(suggestions)}?")
-        raise DottifyKNFError(f"Key '{key}' not found.")
+        return self.get(key)
 
     def __setitem__(self, key, value):
         self.__dict__[key] = value
@@ -30,19 +29,12 @@ class Dottify(dict):
         
     def __getattr__(self, key):
         if not self.has_key(key):
-            matches = []
-            for ky, val in self.__dict__.items():
-                if ky.lower().__contains__(key.lower()):
-                    matches.append(ky)
+            suggestions = self._suggest_keys(key)
+            if suggestions:
+                raise DottifyKNFError(f"Key '{key}' not found. Did you mean: {', '.join(suggestions)}?")
+            raise DottifyKNFError(f"Key '{key}' not found.")
             
-            if matches:
-                raise DottifyKNFError("Key '{}' not found. Do you mean '{}' ?".format(key, ', '.join(matches)))
-            
-            else:
-                raise DottifyKNFError(f"Key '{key}' not found.")
-                
-        else:
-            return self.__dict__[key]
+        return self.get(key)
                  
     def __len__(self):
         return len(self.__dict__)
@@ -61,25 +53,16 @@ class Dottify(dict):
         return res
 
     def remove(self, key: str) -> Any:
-        for ky in self.__dict__:
-            if ky.lower() == key.lower():
-                del self.__dict__[ky]
-                return
-                
-        matches = [ky for ky in self.__dict__ if key.lower() in ky.lower()]
-        if matches:
-            raise DottifyKNFError(f"Key '{key}' not found. Did you mean: {', '.join(matches)}?")
+        if not self.has_key(key):
+            suggestions = self._suggest_keys(key)
+            if suggestions:
+                raise DottifyKNFError(f"Key '{key}' not found. Did you mean: {', '.join(suggestions)}?")
+            raise DottifyKNFError(f"Key '{key}' not found.")
+            
+        del self.__dict__[key]
         
-        raise DottifyKNFError(f"Key '{key}' not found.")
-
-    def _find_key(self, key):
-        for ky in self.__dict__:
-            if ky.lower() == key.lower():
-                return ky
-        return None
-
     def _suggest_keys(self, key):
-        return [ky for ky in self.__dict__ if key.lower() in ky.lower()]
+        return [ky for ky in self.__dict__.keys() if ky.lower().__contains__(key.lower())]
 
     def get(self, key: str, default_value: Any = None) -> Any:
         key_found = False
@@ -91,17 +74,11 @@ class Dottify(dict):
                 return val
                 
         if key_found is False and default_value is None:
-            matches = []
-            for ky, val in self.__dict__.items():
-                if ky.lower().__contains__(key.lower()):
-                    matches.append(ky)
+            suggestions = self._suggest_keys(key)
+            if suggestions:
+                raise DottifyKNFError(f"Key '{key}' not found. Did you mean: {', '.join(suggestions)}?")
+            raise DottifyKNFError(f"Key '{key}' not found.")
             
-            if matches:
-                raise DottifyKNFError("Key '{}' not found. Do you mean '{}' ?".format(key, ', '.join(matches)))
-            
-            else:
-                raise DottifyKNFError(f"Key '{key}' not found.")
-                
         return default_value
         
     def keys(self):
@@ -114,6 +91,10 @@ class Dottify(dict):
         return self.__dict__.items()
     
     def has_key(self, key):
-        return self._find_key(key) is not None
+        for ky in self.__dict__.keys():
+            if ky == key:
+                return True
+                
+        return False
 
 
