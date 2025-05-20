@@ -35,7 +35,7 @@ class Dottify(dict):
             raise DottifyKNFError(f"Key '{key}' not found.")
             
         return self.get(key)
-                 
+
     def __len__(self):
         return len(self.__dict__)
         
