@@ -15,6 +15,9 @@ class Dottify(dict):
         return self.to_dict().__repr__()
         
     def __getitem__(self, key):
+        if type(key) == int:
+            return self.__dict__[key]
+            
         if not self.has_key(key):
             suggestions = self._suggest_keys(key)
             if suggestions:
@@ -35,6 +38,15 @@ class Dottify(dict):
         other_data = other.to_dict() if isinstance(other, Dottify) else other
         new_data.update(other_data)
         return Dottify(new_data)
+        
+    def __iadd__(self, other):
+        if not isinstance(other, (dict, Dottify)):
+            raise TypeError(f"Unsupported operand type(s) for +=: 'Dottify' and '{type(other).__name__}'")
+        
+        for key, value in other.items():
+            self.__dict__[key] = value
+        
+        return self
         
     def __getattr__(self, key):
         if not self.has_key(key):
