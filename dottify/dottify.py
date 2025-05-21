@@ -16,7 +16,13 @@ class Dottify(dict):
         
     def __getitem__(self, key):
         if type(key) == int:
-            return self.__dict__[key]
+            n = 0
+            for ky, value in self.__dict__.items():
+                if n == key:
+                    return self.__dict__[ky]
+                n += 1
+            
+            raise DottifyKNFError(f"Key '{key}' not found.")
             
         if not self.has_key(key):
             suggestions = self._suggest_keys(key)
