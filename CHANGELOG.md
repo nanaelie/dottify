@@ -1,3 +1,7 @@
+## [v1.1.1] 
+
+update README to fix usage example without changing core code
+
 ## [v1.1.0]
 
 ### **1. Inheritance**
