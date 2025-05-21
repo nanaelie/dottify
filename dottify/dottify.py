@@ -27,6 +27,15 @@ class Dottify(dict):
         self.__dict__[key] = value
         return self
         
+    def __add__(self, other):
+        if not isinstance(other, (dict, Dottify)):
+            return NotImplemented
+
+        new_data = self.to_dict()
+        other_data = other.to_dict() if isinstance(other, Dottify) else other
+        new_data.update(other_data)
+        return Dottify(new_data)
+        
     def __getattr__(self, key):
         if not self.has_key(key):
             suggestions = self._suggest_keys(key)
