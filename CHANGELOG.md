@@ -24,6 +24,7 @@
 * `has_key(key)`: Checks for key existence (case-insensitive).
 * `_suggest_keys(key)`: Internal helpers for smart key resolution.
 * `__add__` method to support merging two `Dottify` instances using the `+` operator.
+* `__iadd__` method to allow in-place merging of two Dottify objects using +=
 
 ### **5. Enhanced `get()` Method**
 
