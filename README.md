@@ -24,7 +24,73 @@ pip install dottify
 Here’s an example of how Dottify works:
 
 ```python
+from dottify import Dottify
 
+# Initial data
+persons = {
+    "Alice": {
+        "age": 30,
+        "city": "Paris",
+        "profession": "Engineer"
+    },
+    "Charlie": {
+        "age": 35,
+        "city": "Marseille",
+        "profession": "Doctor"
+    }
+}
+
+# Wrap with Dottify
+people = Dottify(persons)
+
+# Merge with + operator (__add__)
+new_person = {
+    "Bob": {
+        "age": 2,
+        "city": "Lyon",
+        "profession": "Designer"
+    }
+}
+people = people + new_person
+
+# In-place merge with += (__iadd__)
+people += Dottify({
+    "John": {
+        "age": 27,
+        "city": "Toulouse",
+        "profession": "Carpenter"
+    }
+})
+
+# Access by dot notation and key lookup
+print(people.Alice.age)             # 30
+print(people["Charlie"].city)       # Marseille
+print(people.Bob.profession)        # Designer
+
+# Index-based access (__getitem__)
+print(people[3].profession)         # Carpenter (John)
+
+# Modify attributes
+people.John.profession = "Developer"
+people.Bob.age = 39
+
+# Use get() with case-insensitive fallback
+print(people.get("alice", "Not Found").city)     # Paris
+print(people.get("ALICIA", "Not Found"))         # Not Found
+
+# Remove a key by name (case-sensitive)
+people.remove("Bob")  # Removes Bob
+
+# Check if a key exists (case-insensitive)
+print(people.has_key("charlie"))     # False (because 'charlie' != 'Charlie')
+print(people.has_key("Charlie"))     # True
+print(people.has_key("unknown"))     # False
+
+# Use len(), keys(), values(), items()
+print(len(people))                   # 3 (Alice, Charlie, John)
+print(list(people.keys()))           # ['Alice', 'Charlie', 'John']
+print([v.city for v in people.values()])  # ['Paris', 'Marseille', 'Toulouse']
+print([(k, v.age) for k, v in people.items()])  # [('Alice', 30), ('Charlie', 35), ('John', 27)]
 ```
 
 ## Features
