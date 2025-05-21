@@ -19,7 +19,8 @@ class Dottify(dict):
             n = 0
             for ky, value in self.__dict__.items():
                 if n == key:
-                    return self.__dict__[ky]
+                    return Dottify(value) if isinstance(value, dict) else value
+                
                 n += 1
             
             raise DottifyKNFError(f"Key '{key}' not found.")
