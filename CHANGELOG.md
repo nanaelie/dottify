@@ -22,7 +22,8 @@
 * `__len__`, `__iter__`, `keys()`, `values()`, `items()`: Emulate standard `dict` behavior.
 * `remove(key)`: Removes key case-insensitively.
 * `has_key(key)`: Checks for key existence (case-insensitive).
-* `_find_key(key)`, `_suggest_keys(key)`: Internal helpers for smart key resolution.
+* `_suggest_keys(key)`: Internal helpers for smart key resolution.
+* `__add__` method to support merging two `Dottify` instances using the `+` operator.
 
 ### **5. Enhanced `get()` Method**
 
