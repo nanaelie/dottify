@@ -78,10 +78,10 @@ people.Bob.age = 39
 print(people.get("alice", "Not Found").city)     # Paris
 print(people.get("ALICIA", "Not Found"))         # Not Found
 
-# Remove a key by name (case-sensitive)
+# Remove a key by name
 people.remove("Bob")  # Removes Bob
 
-# Check if a key exists (case-insensitive)
+# Check if a key exists
 print(people.has_key("charlie"))     # False (because 'charlie' != 'Charlie')
 print(people.has_key("Charlie"))     # True
 print(people.has_key("unknown"))     # False
