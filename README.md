@@ -9,50 +9,39 @@
 
 # Dottify
 
-Dottify est une bibliothèque Python simple qui permet de convertir des dictionnaires en objets accessibles par attributs. Au lieu d'utiliser la syntaxe classique dict["key"], vous pouvez accéder aux valeurs d'un dictionnaire en utilisant la notation par points dict.key après avoir appliqué la transformation.
+Dottify is a lightweight Python library that converts dictionaries into objects with attribute-style access. Instead of the usual `dict["key"]` syntax, you can access dictionary values using dot notation like `dict.key`. All access is **case-sensitive**, but helpful suggestions are provided when a key is missing.
 
 ## Installation
 
-Vous pouvez installer Dottify via pip :
-```bash
+Install via pip:
+
+```sh
 pip install dottify
 ```
-## Utilisation
 
-Voici un exemple d'utilisation de Dottify :
+## Usage
+
+Here’s an example of how Dottify works:
+
 ```python
-from dottify import Dottify
-           
-persons = {
-    "Alice": {
-        "age": 30,
-        "city": "Paris",
-        "profession": "Engineer"
-    },
-    "Charlie": {
-        "age": 35,
-        "city": "Marseille",
-        "profession": "Doctor"
-    }
-}
 
-persons = Dottify(persons)
-
-print(persons.Alice.age)             # 30
-print(persons.Charlie.city)          # Marseille
-print(persons.Charlie.age)           # 35
-print(persons.Alice.profession)      # Engineer
 ```
-## Fonctionnalités
 
-- Conversion facile de dictionnaires en objets accessibles par attributs.
-- Prise en charge des dictionnaires imbriqués.
+## Features
 
-## Contribuer
+* Converts standard and nested dictionaries into objects with attribute access.
+* Supports both dot notation (`obj.key`) and dictionary-style (`obj["key"]`) access.
+* All access is **case-sensitive**.
+* Friendly error messages with key suggestions (case-insensitive search).
+* Key removal with `.remove("Key")` is **case-sensitive**, but also provides suggestions if the key doesn't match.
+* Easily convert back to a standard dict using `.to_dict()`.
+* Supports `.keys()`, `.values()`, `.items()`, iteration, and `len()` additions.
 
-Les contributions sont les bienvenues ! N'hésitez pas à soumettre des demandes de tirage (pull requests) ou à ouvrir des problèmes (issues) sur le dépôt GitHub.
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests on the [GitHub repository](https://github.com/nanaelie/dottify).
 
 ## License
 
-Distribué sous la licence MIT. Voir [LICENSE](LICENSE) pour plus d'informations.
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
