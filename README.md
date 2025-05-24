@@ -1,7 +1,6 @@
 [![PyPI Downloads](https://static.pepy.tech/badge/dottify)](https://pepy.tech/projects/dottify)
 ![PyPI](https://img.shields.io/pypi/v/dottify?style=flat-square)
 ![GitHub stars](https://img.shields.io/github/stars/nanaelie/dottify?style=flat-square)
-![GitHub forks](https://img.shields.io/github/forks/nanaelie/dottify?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/nanaelie/dottify?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/nanaelie/dottify?style=flat-square)
 ![License](https://img.shields.io/github/license/nanaelie/dottify?style=flat-square)
