@@ -4,7 +4,7 @@ from dottify.__version__ import __version__
 setup(
     name="dottify",
     version=__version__,
-    author="nae-dev",
+    author="nae.dev",
     author_email="nae.devp@gmail.com",
     description="A Python library to access dictionaries using dot notation.",
     long_description=open("README.md", encoding="utf-8").read(),
