@@ -24,6 +24,9 @@ setup(
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries",
     ],
+    extras_require={
+        "dev": ["pytest"]
+    },
     python_requires='>=3.6',
     license="MIT",
 )
