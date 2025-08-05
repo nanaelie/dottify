@@ -5,6 +5,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/nanaelie/dottify?style=flat-square)
 ![License](https://img.shields.io/github/license/nanaelie/dottify?style=flat-square)
 ![Python](https://img.shields.io/badge/python-3.x-blue?style=flat-square)
+![Tests](https://img.shields.io/badge/tests-pytest-green?style=flat-square)
 
 # Dottify
 
@@ -101,6 +102,15 @@ print([(k, v.age) for k, v in people.items()])  # [('Alice', 30), ('Charlie', 35
 * Key removal with `.remove("Key")` is **case-sensitive**, but also provides suggestions if the key doesn't match.
 * Easily convert back to a standard dict using `.to_dict()`.
 * Supports `.keys()`, `.values()`, `.items()`, iteration, and `len()` additions.
+* Well-documented and fully tested with `pytest`.
+
+## Tests
+
+To run the test suite:
+
+```bash
+pytest tests/
+```
 
 ## Contributing
 

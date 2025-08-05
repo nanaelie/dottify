@@ -1,3 +1,21 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+## [v1.1.2] - 2025-08-05
+
+### Added
+- Full documentation for the `Dottify` class and its methods using Sphinx-style docstrings (`:param`, `:return`, etc.).
+- Unit test suite using `pytest`, covering key features (attribute access, key suggestions, merging, removal, etc.).
+- Optional `pytest-cov` support to measure test coverage.
+
+### Improved
+- Code quality and maintainability with clear internal docstrings.
+- Developer experience for contributors and maintainers.
+
+### Notes
+- No changes were made to the public API.
+- This version is backward-compatible with previous releases.
+
 ## [v1.1.1] 
 
 update README to fix usage example without changing core code
