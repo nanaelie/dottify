@@ -1,11 +1,15 @@
-[![PyPI Downloads](https://static.pepy.tech/badge/dottify)](https://pepy.tech/projects/dottify)
-![PyPI](https://img.shields.io/pypi/v/dottify?style=flat-square)
-![GitHub stars](https://img.shields.io/github/stars/nanaelie/dottify?style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/nanaelie/dottify?style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/nanaelie/dottify?style=flat-square)
-![License](https://img.shields.io/github/license/nanaelie/dottify?style=flat-square)
-![Python](https://img.shields.io/badge/python-3.x-blue?style=flat-square)
-![Tests](https://img.shields.io/badge/tests-pytest-green?style=flat-square)
+<p align="center">
+  <a href="https://pepy.tech/projects/dottify">
+    <img src="https://static.pepy.tech/badge/dottify" alt="PyPI Downloads" />
+  </a>
+  <img src="https://img.shields.io/pypi/v/dottify?style=flat-square" alt="PyPI" />
+  <img src="https://img.shields.io/github/stars/nanaelie/dottify?style=flat-square" alt="GitHub stars" />
+  <img src="https://img.shields.io/github/issues/nanaelie/dottify?style=flat-square" alt="GitHub issues" />
+  <img src="https://img.shields.io/github/last-commit/nanaelie/dottify?style=flat-square" alt="GitHub last commit" />
+  <img src="https://img.shields.io/github/license/nanaelie/dottify?style=flat-square" alt="License" />
+  <img src="https://img.shields.io/badge/python-3.x-blue?style=flat-square" alt="Python" />
+  <img src="https://img.shields.io/badge/tests-pytest-green?style=flat-square" alt="Tests" />
+</p>
 
 # Dottify
 
