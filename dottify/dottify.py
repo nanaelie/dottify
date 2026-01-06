@@ -30,6 +30,9 @@ class Dottify(dict):
             else:
                 setattr(self, key, value)
                 
+    def __str__(self):
+        return f"Dottify({self.__repr__()})"
+                
     def __repr__(self):
         """
         Return the string representation of the Dottify object as a dict.
