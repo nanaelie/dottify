@@ -3,7 +3,6 @@
     <img src="https://static.pepy.tech/badge/dottify" alt="PyPI Downloads" />
   </a>
   <img src="https://img.shields.io/pypi/v/dottify?style=flat-square" alt="PyPI" />
-  <img src="https://img.shields.io/github/issues/nanaelie/dottify?style=flat-square" alt="GitHub issues" />
   <img src="https://img.shields.io/github/last-commit/nanaelie/dottify?style=flat-square" alt="GitHub last commit" />
   <img src="https://img.shields.io/github/license/nanaelie/dottify?style=flat-square" alt="License" />
   <img src="https://img.shields.io/badge/python-3.x-blue?style=flat-square" alt="Python" />
