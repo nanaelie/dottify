@@ -1,5 +1,9 @@
-from dottify.exceptions import *
+from dottify.exceptions import DottifyKNFError
 from typing import Any
+
+class PrettyType(type):
+    def __repr__(self):
+        return self.__name__ 
 
 class Dottify(dict):
     """
@@ -215,6 +219,8 @@ class Dottify(dict):
         for ky, val in self.__dict__.items():
             if key.lower() == ky.lower():
                 key_found = True
+                if isinstance(val, dict):
+                    return Dottify(val)
                 return val
                 
         if not key_found and default_value is None:

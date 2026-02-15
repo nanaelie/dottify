@@ -27,6 +27,7 @@ def test_to_dict():
     result = d.to_dict()
     assert result == data
     assert isinstance(result, dict)
+    assert isinstance(d, Dottify)
 
 def test_remove_key():
     data = {"a": 1, "b": 2}
