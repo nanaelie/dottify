@@ -227,7 +227,6 @@ class Dottify(dict):
             suggestions = self._suggest_keys(key)
             if suggestions:
                 raise DottifyKNFError(f"Key '{key}' not found. Did you mean: {', '.join(suggestions)}?")
-            raise DottifyKNFError(f"Key '{key}' not found.")
             
         return default_value
         
