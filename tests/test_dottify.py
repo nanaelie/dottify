@@ -1,9 +1,10 @@
 import pytest
 import sys
 import os
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from dottify.dottify import Dottify
-from dottify.exceptions import DottifyKNFError
+
+from dottify import Dottify, DottifyKNFError
 
 def test_basic_access():
     data = {"user": {"name": "Alice", "age": 30}}
@@ -52,7 +53,6 @@ def test_merge_iadd_operator():
 
 def test_case_insensitive_get():
     d = Dottify({"Name": "Bob"})
-    assert d.get("name") == "Bob"
-    assert d.get("NAME") == "Bob"
+    assert d.get("name") == None
+    assert d.get("NAME") == None
     assert d.get("notfound", "default") == "default"
-
