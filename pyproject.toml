@@ -1,0 +1,85 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dottify"
+version = "2.0.0"
+description = "Dictionary with attribute-style access, recursive conversion, and helpful error suggestions"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    { name = "Nana Elie", email = "nae.devp@gmail.com" },
+]
+keywords = [
+    "dict",
+    "dictionary",
+    "dot",
+    "attribute",
+    "access",
+    "dotmap",
+    "box",
+    "dottify",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.6",
+    "mypy>=1.11",
+]
+
+[project.urls]
+Homepage = "https://github.com/nanaelie/dottify"
+Repository = "https://github.com/nanaelie/dottify"
+Documentation = "https://github.com/nanaelie/dottify#readme"
+Changelog = "https://github.com/nanaelie/dottify/blob/main/CHANGELOG.md"
+Issues = "https://github.com/nanaelie/dottify/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dottify"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/dottify",
+    "tests",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "N"]
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
